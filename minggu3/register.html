@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- CDN Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Konfigurasi Warna Custom Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#00bcee',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md">
+    <!-- Judul Form -->
+    <h2 class="text-2xl font-bold mb-6 text-white text-center tracking-wide">
+      <span class="text-accent">Pendaftaran</span>
+    </h2>
+
+    <form id="registerForm" action="dashboard.html" method="GET" class="space-y-4">
+      
+      <!-- Username -->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-300 mb-1">Username</label>
+        <input type="text" id="username" name="username" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 placeholder-gray-500">
+        <p id="usernameError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+        <input type="password" id="password" name="password" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 placeholder-gray-500">
+        <p id="passwordError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Nama -->
+      <div>
+        <label for="nama" class="block text-sm font-medium text-gray-300 mb-1">Nama</label>
+        <input type="text" id="nama" name="nama" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 placeholder-gray-500">
+        <p id="namaError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Tanggal Lahir -->
+      <div>
+        <label for="tanggalLahir" class="block text-sm font-medium text-gray-300 mb-1">Tanggal Lahir</label>
+        <input type="date" id="tanggalLahir" name="tanggalLahir" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 [color-scheme:dark]">
+        <p id="tanggalLahirError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Alamat -->
+      <div>
+        <label for="alamat" class="block text-sm font-medium text-gray-300 mb-1">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="3" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 placeholder-gray-500"></textarea>
+        <p id="alamatError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Nomor Telpon -->
+      <div>
+        <label for="nomorTelpon" class="block text-sm font-medium text-gray-300 mb-1">Nomor Telpon</label>
+        <input type="text" id="nomorTelpon" name="nomorTelpon" placeholder="628123456789" class="w-full bg-gray-800 text-white rounded-md border border-gray-700 p-2.5 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition duration-200 placeholder-gray-500">
+        <p id="nomorTelponError" class="text-red-400 text-xs mt-1 hidden"></p>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-2">
+        <button type="submit" class="w-full bg-[#00bcee] hover:bg-[#00a3d1] text-gray-950 font-bold py-2.5 px-4 rounded-md shadow-lg shadow-[#00bcee]/20 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-accent">
+          Daftar
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Panggil validasi_input.js -->
+  <script src="validasi_input.js"></script>
+</body>
+</html> 
