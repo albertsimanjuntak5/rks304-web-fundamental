@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ judul }} - WEBSITEKU.COM{% endblock %}
+
+{% block konten %}
+<div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-2xl font-bold mb-4 text-indigo-600">{{ judul }}</h2>
+    
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-indigo-50 border-b border-indigo-100">
+                    <th class="p-3">Nama Produk</th>
+                    <th class="p-3">Harga</th>
+                    <th class="p-3">Stok</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in produk %}
+                <tr class="border-b border-gray-100 hover:bg-gray-50">
+                    <td class="p-3 font-medium">{{ p.nama }}</td>
+                    <td class="p-3">Rp {{ "{:,}".format(p.harga) }}</td>
+                    <td class="p-3">
+                        {% if p.stock > 0 %}
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold">{{ p.stock }}</span>
+                        {% else %}
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold">Habis</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

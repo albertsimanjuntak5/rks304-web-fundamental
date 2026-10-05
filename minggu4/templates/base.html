@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WEBSITEKU.COM{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-indigo-600 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <h1 class="text-2xl font-bold tracking-wide">WEBSITEKU.COM</h1>
+            <nav class="flex gap-6 font-medium">
+                <a href="/" class="hover:text-indigo-200 transition-colors">Home</a>
+                <a href="/mahasiswa" class="hover:text-indigo-200 transition-colors">Mahasiswa</a>
+                <a href="/register" class="hover:text-indigo-200 transition-colors">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-6">
+        {% block konten %}
+        <!-- Konten halaman akan muncul di sini -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-4 text-center text-sm border-t border-gray-700">
+        <p>&copy; 2026 WEBSITEKU.COM. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
